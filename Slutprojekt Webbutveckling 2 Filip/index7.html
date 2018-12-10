@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Coruscant News.</title>
+    <link rel="icon" href="img/favicon.ico" sizes="32x32" />
+</head>
+<body>
+    <nav>
+        <a href="index.html">home.</a>   
+        <a href="index2.html">the imperial legion.</a>
+        <a href="index3.html">the outer rim.</a>
+        <a href="index7.html">ships of the empire.</a>
+    </nav>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.get('https://swapi.co/api/starships/')
+        .then(function (response) {
+            console.log(response);
+            console.log("Ship: ", response.data.results[0]);
+            var ships = response.data.results;
+            var keepShips = [];
+            var shipToShow=["Executor", "X-wing", "Y-wing"];
+            for(let i=0; i< ships.length; i++){
+                let found = false;
+                shipToShow.forEach(function(validShip){
+                    console.log(validShip);
+                    if(validShip == ships[i].name){
+                        found = true;
+                    }
+                });
+
+                if (found) {
+                    keepShips.push(ships[i]);
+                }
+            }
+            ships = keepShips;
+            /* var number = [1,2,3,4,5,6,7,8,9];
+            function checkNumber(number){
+                    return(number==3) || (number==6);
+                }
+            function wrapperE(){
+                document.getElementById("wrapperE").innerHTML = numbers.filter(checkNumber);
+            } */
+            var str = '<section>'
+            ships.forEach(function(ship) {
+                console.log(ship);
+            str += '<article class="ship-art">';
+            str += '<ul>';
+            str += '<li>'+  ship.model.toLowerCase() + '</li>';
+            str += '<li>'+  ship.manufacturer.toLowerCase() + '</li>';
+            str += '<li>'+  ship.cost_in_credits.toLowerCase() + " Credits." + '</li>';
+            str += '<li>'+  ship.length.toLowerCase() + " meters." + '</li>';
+            str += '<li>'+  ship.MGLT.toLowerCase() + " megalights." + '</li>';
+            str += '<li>'+  ship.crew.toLowerCase() + " total crew." + '</li>';
+            str += '<li>'+  ship.max_atmosphering_speed.toLowerCase() + " kph in atmosphere." + '</li>';
+            str += '</ul>';
+            str += '</article>';
+            });  
+            str += '</section>';
+            document.getElementById("wrapperE").innerHTML = str;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });  
+    </script>
+    <div id="wrapperE">
+    </div>
+    
+</body>
+</html>

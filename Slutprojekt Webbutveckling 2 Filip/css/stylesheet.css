@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'starjedi';
+    src: url('../fonter/starjedi/Starjedi.ttf');
+}
+ 
+#wrapperA {
+    width:80vw;
+    height:400vh;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(8,1fr);
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    grid-template-areas: 
+    'hd hd hd hd'
+    'sc sc sc as'
+	'sc sc sc as'
+    'sc sc sc as'
+	'sc sc sc as'
+	'sc sc sc as'
+	'sc sc sc as'
+    'ft ft ft ft';
+}
+
+#wrapperB {
+    width:80vw;
+    height:300vh;
+    display: grid;
+    margin: auto;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+    'hd hd hd hd'
+    'sc sc sc as'
+	'sc sc sc as'
+    'sc sc sc as'
+    'ft ft ft ft';
+}
+
+#wrapperC {
+    width:80vw;
+    height:300vh;
+    display: grid;
+    margin: auto;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+    'hd hd hd hd'
+    'sc sc sc as'
+	'sc sc sc as'
+    'ft ft ft ft';
+}
+
+#wrapperD {
+    width:80vw;
+    height:200vh;
+    display: grid;
+    margin: auto;
+    margin-bottom: 16px;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+    'hd hd hd hd'
+    'sc sc sc sc'
+	'sc sc sc sc';
+}
+
+#wrapperE {
+    width:80vw;
+    height:200vh;
+    display: grid;
+    margin: auto;
+    margin-bottom: 16px;
+    padding: 10px;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+    'hd hd hd hd'
+    'sc sc sc sc'
+	'sc sc sc sc';
+    /*background-color: #cfcfcf;*/
+}
+
+body {
+    margin: 0;
+    font-family: 'starjedi';
+    font-size: 15px;
+    letter-spacing: 2px;
+    background-image: url("../img/coruscant-star-wars-29352-1920x1080.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+@media all and (max-width:768px) {
+    #wrapperA {
+        width:80vw;
+        height:400vh;
+        margin: auto;
+        display: grid;
+        grid-template-rows: repeat(8,1fr);
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+        grid-template-areas: 
+        'hd hd hd'
+        'sc sc sc'
+        'sc sc sc'
+        'sc sc sc'
+        'sc sc sc'
+        'sc sc sc'
+        'sc sc sc'
+        'ft ft ft';
+    }
+    
+    #wrapperB {
+        width:80vw;
+        height:300vh;
+        display: grid;
+        margin: auto;
+        grid-template-rows: repeat(5,1fr);
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+        grid-template-areas:
+        'hd hd hd'
+        'sc sc sc'
+        'sc sc sc'
+        'sc sc sc'
+        'ft ft ft';
+    }
+    
+    #wrapperC {
+        width:80vw;
+        height:300vh;
+        display: grid;
+        margin: auto;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+        grid-template-areas:
+        'hd hd hd'
+        'sc sc sc'
+        'sc sc sc'
+        'ft ft ft';
+    }
+    
+    #wrapperD {
+        width:80vw;
+        height:200vh;
+        display: grid;
+        margin: auto;
+        margin-bottom: 16px;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+        grid-template-areas:
+        'hd hd hd'
+        'sc sc sc'
+        'sc sc sc';
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'starjedi';
+        font-size: 10px;
+        letter-spacing: 2px;
+        background-image: url("../img/coruscant-star-wars-29352-1920x1080.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        
+    }
+
+    img {
+        width: 50%;
+    }
+    
+}
+
+
+input, button{
+    font-family: 'starjedi';
+}
+
+/*body::before {
+    background-image: url("../img/coruscant-star-wars-29352-1920x1080.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    content: '';
+}*/
+
+
+form {
+    margin-top:50px;
+}
+
+header {
+    grid-area:hd;
+    margin: auto;
+	background-color: #cfcfcf;
+    text-align: center; 
+    
+}
+
+aside {
+    grid-area:as;
+    background-image: url("../img/SWwallpaper2.jpg");
+	display: grid;
+    background-size: 100%;
+	align-content: center;
+    justify-content: center;
+    background-position: center;    
+}
+
+.asideC {
+    grid-area:as;
+    background-image: url("../img/JZSlmxy.jpg");
+	display: grid;
+    background-size: 80%;
+    background-size:cover;
+}
+
+section {
+    display:grid;
+    grid-row-gap: 10px;
+    grid-auto-rows: minmax(100px, 1fr);
+    grid-area:sc;
+    text-align: left; 
+}
+
+section article{
+    background-color:#cfcfcf;
+    float: left;
+    overflow:auto;
+}
+
+.floattext {
+    float: left;
+    clear:left;
+    border-style: solid;
+    border-radius: 15px;
+    border-color:#cfcfcf;
+    margin: 10px;
+}
+
+
+footer {
+    grid-area:ft;
+    background-color: #cfcfcf;
+    text-align: center;  
+    height: 100%;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: 5px;
+    border-style: solid;
+    border-color: #cfcfcf;
+    background: #cfcfcf;
+}
+h1 {
+    text-align: center;
+}
+
+.button:hover{
+    opacity:1;
+}
+.button {
+    background-color: #010101;
+    border: none;
+    color: #cfcfcf;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.button2 {
+    background-color: #010101;
+    border: none;
+    color: #cfcfcf;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+p {
+    padding: 10px;
+}
+
+/*Here is where the fun begins*/
+
+
+* {box-sizing: border-box}
+
+.container {
+  padding: 16px;
+  background-color:#cfcfcf;
+    margin: auto;
+    margin-bottom: 16px;
+    overflow: auto;
+    width: 70vw;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+ }
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #010101;
+  color: #cfcfcf;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+} 
